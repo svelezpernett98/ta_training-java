@@ -6,10 +6,10 @@ import com.epam.training.student_santiago_velez.task2.pageobjectsclasses.SavedPa
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static org.junit.Assert.assertEquals;
+
 
 public class AppTestTask2 {
     BaseClass base;
@@ -38,6 +38,7 @@ public class AppTestTask2 {
         pasteBinHomePageObject.clickOnCreateNewPasteButton();
 
         SavedPastePage savedPastePageObject = new SavedPastePage();
+        BaseClass.tenSecondsWait.until(ExpectedConditions.visibilityOfElementLocated(savedPastePageObject.getPasteTitleLocator()));
         assertEquals("Title is not as expected", "how to gain dominance among developers", savedPastePageObject.getBrowserTitle());
         assertEquals("Syntax is not as expected", "Bash", savedPastePageObject.getSyntaxLink());
         assertEquals("Code is not as expected", code, savedPastePageObject.getCodeFromTextArea());

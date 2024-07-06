@@ -20,7 +20,7 @@ public class BaseClass {
     public BaseClass(){
         try{
             prop  = new Properties();
-            FileInputStream data = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\com\\epam\\training\\student_santiago_velez\\task1\\resources\\config.properties.txt");
+            FileInputStream data = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\com\\epam\\training\\student_santiago_velez\\task2\\resources\\config.properties.txt");
             prop.load(data);
         } catch (IOException e){
             System.err.println("Failed getting the data, " + e.getMessage());

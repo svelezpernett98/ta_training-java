@@ -3,7 +3,6 @@ package com.epam.training.student_santiago_velez.task2.pageobjectsclasses;
 import com.epam.training.student_santiago_velez.task2.base.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
@@ -22,11 +21,7 @@ public class PasteBinHomePage {
         // Using JavaScript to make the select tag visible
         ((JavascriptExecutor) BaseClass.driver).executeScript("arguments[0].style.visibility='visible';", BaseClass.driver.findElement(pasteExpirationDropDownList));
 
-        //TODO: Change to global explicit wait
-//        tenSecondsWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//        tenSecondsWait.until(ExpectedConditions.visibilityOfElementLocated(pasteExpirationDropDownList));
-
-        //global explicit wait:
+        //explicit wait:
         BaseClass.tenSecondsWait.until(ExpectedConditions.visibilityOfElementLocated(pasteExpirationDropDownList));
 
         Select select = new Select(BaseClass.driver.findElement(pasteExpirationDropDownList));
@@ -40,7 +35,7 @@ public class PasteBinHomePage {
     public void selectElementFromSyntaxHighligthingDropDownList(String dropDownOption){
         ((JavascriptExecutor) BaseClass.driver).executeScript("arguments[0].style.visibility='visible';", BaseClass.driver.findElement(syntaxHighligthingDropDownList));
 
-        //global explicit wait:
+        //explicit wait:
         BaseClass.tenSecondsWait.until(ExpectedConditions.visibilityOfElementLocated(syntaxHighligthingDropDownList));
 
         Select select = new Select(BaseClass.driver.findElement(syntaxHighligthingDropDownList));
@@ -48,8 +43,6 @@ public class PasteBinHomePage {
     }
 
     public void clickOnCreateNewPasteButton(){
-        ((JavascriptExecutor) BaseClass.driver).executeScript("arguments[0].scrollIntoView(true);", BaseClass.driver.findElement(createNewPasteButton)); //PUEDE SER INNECESARIO BORRAR Y PROBAR
-        BaseClass.tenSecondsWait.until(ExpectedConditions.visibilityOfElementLocated(createNewPasteButton)); //PUEDE SER INNECESARIO BORRAR Y PROBAR
         BaseClass.driver.findElement(createNewPasteButton).click();
     }
 

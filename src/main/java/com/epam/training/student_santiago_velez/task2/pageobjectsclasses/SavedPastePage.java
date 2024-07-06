@@ -2,7 +2,7 @@ package com.epam.training.student_santiago_velez.task2.pageobjectsclasses;
 
 import com.epam.training.student_santiago_velez.task2.base.BaseClass;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class SavedPastePage {
     private By pasteTitle = By.cssSelector("div.info-top>h1");
@@ -20,6 +20,10 @@ public class SavedPastePage {
     public String getCodeFromTextArea(){
         System.out.println(BaseClass.driver.findElement(codeFromTextArea).getText());
         return BaseClass.driver.findElement(codeFromTextArea).getText();
+    }
+
+    public By getPasteTitleLocator(){
+        return pasteTitle;
     }
 
 }
