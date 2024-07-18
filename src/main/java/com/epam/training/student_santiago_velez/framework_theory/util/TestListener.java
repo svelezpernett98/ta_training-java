@@ -24,7 +24,7 @@ public class TestListener implements ITestListener {
         try {
             File srcFile = ((TakesScreenshot) BaseClass.driver).getScreenshotAs(OutputType.FILE);
 
-            File destFile = new File(System.getProperty("user.dir") + "\\target\\screenshots\\" + timeStamp() + ".png");
+            File destFile = new File(System.getProperty("user.dir") + "\\screenshots\\" + timeStamp() + ".png");
 
             FileUtils.copyFile(srcFile, destFile);
         } catch (IOException e) {
