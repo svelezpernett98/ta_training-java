@@ -11,7 +11,7 @@ public class ComputeEnginePage extends BaseClass {
     private By pageTItle = By.cssSelector("h1[aria-label='Selected product title']");
     private By numberOfInstancesInput = By.xpath("//div[contains(text(), 'Number of instances')]/../following-sibling::div[2]/div[2]/div/label/span[2]/input");
     private By OperatingSystemDropDownList = By.xpath("//span[contains(text(), 'Operating System / Software')]/ancestor::*[3]/div[1]");
-    private By regularProvisioningModelButton = By.cssSelector("input#regular+label");
+    private By regularProvisioningModelButton = By.xpath("//label[text()='Regular']");
     private By machineFamilyDropDownList = By.xpath("//span[contains(text(), 'Machine Family')]/ancestor::*[3]/div[1]");
     private By seriesDropDownList = By.xpath("//span[contains(text(), 'Series')]/ancestor::*[3]/div[1]");
     private By machineTypeDropDownList = By.xpath("//span[contains(text(), 'Machine type')]/ancestor::*[3]/div[1]");
